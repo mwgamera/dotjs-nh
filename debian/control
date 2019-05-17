@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9), dh-exec
 Standards-Version: 4.3.0
 
 Package: webext-dotjs-nh
-Architecture: any
+Architecture: all
 Depends: python, ${misc:Depends}
 Enhances: firefox, firefox-esr, chromium
 Description: Simple web extension for injecting scripts
