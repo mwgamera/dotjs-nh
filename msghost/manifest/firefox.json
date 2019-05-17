@@ -1,0 +1,9 @@
+{
+  "name": "klg.dotjs_nh",
+  "description": "~/.js native messaging host",
+  "path": "/usr/lib/webext-dotjs-nh/dotjs.py",
+  "type": "stdio",
+  "allowed_extensions": [
+    "d78ee96f-b247-4455-a836-6829d110606c@mwgamera.name"
+  ]
+}

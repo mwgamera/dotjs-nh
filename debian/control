@@ -1,0 +1,17 @@
+Source: dotjs-nh
+Section: web
+Priority: optional
+Maintainer: klg <mwgamera@gmail.com>
+Build-Depends: debhelper (>= 9), dh-exec
+Standards-Version: 4.3.0
+
+Package: webext-dotjs-nh
+Architecture: any
+Depends: python, ${misc:Depends}
+Enhances: firefox, firefox-esr, chromium
+Description: Simple web extension for injecting scripts
+ Dotjs-NH is a simple web extension for Chromium and Firefox that
+ injects custom scripts and style sheets into the pages directly from
+ user's ~/.js and ~/.css directories based on their file name.  It's one
+ of many replacements for defunkt's popular dotjs extension for Chrome.
+ This one uses native messaging host to access the files.

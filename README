@@ -1,0 +1,38 @@
+~/.js
+=====
+
+Dotjs-NH is a simple web extension for Chromium and Firefox that injects
+custom scripts and style sheets into the pages directly from user's
+~/.js and ~/.css directories based on their file name.  It's one of
+many replacements for defunkt's popular dotjs extension for Chrome.
+Original extension used separate HTTP server which doesn't work well
+in presence of Content Security Policy.  This one uses native messaging
+host to access the files.
+
+Both extension and messaging host are trivial, but configuring it to
+work together is rather annoying, which is why this exists to build it
+as a debian package.
+
+Installation
+------------
+
+This repository is in DebSrc3 format and you can build it using your
+favourite tools and then just install the resulting package.
+
+In debian stretch, chromium additionally needs the extension to be
+explicitly added with --load-extension flag.  In buster, one only
+needs to restart the browser as it should be added automatically.
+
+Usage
+-----
+
+Like original dotjs, Dotjs-NH injects files named after domain
+visited and all its parent domains.  For example when one navigates
+to https://example.com/, it will inject files ~/.js/example.com.js and
+~/.js/com.js.  Additionally ~/.js/default.js is injected to all pages.
+Similarly, it will load CSS style sheets from ~/.css/example.com.css,
+~/.css/com.css, and ~/.css/default.css.
+
+Unlike in the original dotjs, no additional libraries are injected.
+If compatibility is desired, one may put jQuery in ~/.js/default.js
+which is included in all sites.

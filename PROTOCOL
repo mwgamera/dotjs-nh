@@ -1,0 +1,47 @@
+Protocol
+========
+
+The native messaging as used in Chrome and Firefox WebExtensions
+uses length-prefixed JSON-serialized messages for communication.
+Dotjs-NH uses this channel as described below.
+
+The extension sends, as request to the native host, a single string value
+containing the URL of the page where content might need to be injected.
+
+    ==> "https://example.org/"
+
+The native host shall respond with an array, first element of which
+(if exists and not falsy) shall be an array of strings representing
+scripts to inject, and second of which (if exists and not falsy) shall
+be an array of strings representing stylesheets to inject.
+The array may be longer or shorter than 2 elements, missing or falsy
+elements should be handled identically to empty arrays.
+
+    <== [["alert(\"Hello, world!\")"],["*{color:red}"]]
+
+Messages are processed sequentially and each request message shall
+result in exactly one reply message.
+
+Rationale
+---------
+
+The primary goal is simplicity of both the protocol and the code of
+native host which runs in privileged environment (i.e. with access to
+the file system); what's needed on the extension side is not a concern.
+
+Sending just an URL as a string is the simplest thing that can be done,
+and since it is required to be a JSON value, future extensibility is
+trivial as anything else will just use a value of different type.
+
+To keep the protocol simple, the reply could also be a single string as
+it's possible to convert stylesheets to JavaScript and to concatenate
+multiple scripts, but this would put additional burden on the native host
+to implement another quoting and safe concatenation of scripts properly.
+Since there's already a JSON encoder required and it's usually available
+as a well-tested library, there's no need to do anything more in native
+host and any post-processing can be done on the extension side.
+
+Finally, arrays are usually more efficient than dictionaries/objects
+and, as long there is only JavaScript and CSS to consider, using object
+value for replies wouldn't really make any difference for readability
+or maintainability.

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Dotjs-NH",
+  "version": "0",
+  "permissions": [
+    "nativeMessaging",
+    "webNavigation",
+    "*://*/"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "main.js"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyiQ5vsARbBf+kuHcsz4ziSdHBwjDM+3gYAhL780S8sOdHBKkb9ayhQYJcjOKvZOVPMf6jnzBb0DPzSWH2dGC2t7GXOVcsepWHcmcxGrWSMrjVVGoKHIj6dgnUkhb5fAlE6FGAILifr/DbABTwBFNoEP40DosmOI85hrXbHMBiqPn0JEDTn/0xP7YREdsblPI93homjISuPV2XJ0XT1G848DqXKXb3i4TWlx10vwPTTH4jumehTIPhV5SoRHzxfxyO4oWKInGvsREyX7T7GF7JU1hoCAX/DRCKsU3IYq2L/DgBgGOtf7lI1GneII598g1Pw8MX6VTeI9vR0jaVg/o5QIDAQAB",
+  "applications": {
+    "gecko": {"id": "d78ee96f-b247-4455-a836-6829d110606c@mwgamera.name"}
+  }
+}

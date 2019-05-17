@@ -1,0 +1,5 @@
+#!/usr/bin/dh-exec
+webext/* usr/share/webext/dotjs-nh/
+msghost/dotjs.py usr/lib/webext-dotjs-nh/
+msghost/manifest/chromium.json => etc/chromium/native-messaging-hosts/klg.dotjs_nh.json
+msghost/manifest/firefox.json => usr/lib/mozilla/native-messaging-hosts/klg.dotjs_nh.json

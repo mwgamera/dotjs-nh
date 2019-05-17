@@ -1,0 +1,9 @@
+{
+  "name": "klg.dotjs_nh",
+  "description": "~/.js native messaging host",
+  "path": "/usr/lib/webext-dotjs-nh/dotjs.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://nhioojgplceheeffkidggicjnbbagagm/"
+  ]
+}
