@@ -7,7 +7,7 @@ Standards-Version: 4.3.0
 
 Package: webext-dotjs-nh
 Architecture: all
-Depends: python, ${misc:Depends}
+Depends: python3, ${misc:Depends}
 Enhances: firefox, firefox-esr, chromium
 Description: Simple web extension for injecting scripts
  Dotjs-NH is a simple web extension for Chromium and Firefox that
