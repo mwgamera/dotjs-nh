@@ -11,7 +11,7 @@ host to access the files.
 
 Both extension and messaging host are trivial, but configuring it to
 work together is rather annoying, which is why this exists to build it
-as a debian package.
+as a Debian package.
 
 Installation
 ------------
@@ -19,9 +19,11 @@ Installation
 This repository is in DebSrc3 format and you can build it using your
 favourite tools and then just install the resulting package.
 
-In debian stretch, chromium additionally needs the extension to be
+In Debian stretch, Chromium additionally needs the extension to be
 explicitly added with --load-extension flag.  In buster, one only
 needs to restart the browser as it should be added automatically.
+
+It does not work with Google Chrome.
 
 Usage
 -----
@@ -32,6 +34,8 @@ to https://example.com/, it will inject files ~/.js/example.com.js and
 ~/.js/com.js.  Additionally ~/.js/default.js is injected to all pages.
 Similarly, it will load CSS style sheets from ~/.css/example.com.css,
 ~/.css/com.css, and ~/.css/default.css.
+
+Internationalized domain names require file names in their punycode form.
 
 Unlike in the original dotjs, no additional libraries are injected.
 If compatibility is desired, one may put jQuery in ~/.js/default.js
