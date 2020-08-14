@@ -9,11 +9,13 @@ chrome.webNavigation.onCommitted.addListener(details => {
   queue.push(msg => {
     if (msg[1]) msg[1].forEach(code =>
       chrome.tabs.insertCSS(details.tabId, {
-        code, frameId: details.frameId
+        code, frameId: details.frameId,
+        runAt: "document_start"
       }))
     if (msg[0]) msg[0].forEach(code =>
       chrome.tabs.executeScript(details.tabId, {
-        code, frameId: details.frameId
+        code, frameId: details.frameId,
+        runAt: "document_end"
       }))
   })
 })
